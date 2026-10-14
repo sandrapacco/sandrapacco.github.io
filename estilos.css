@@ -1,0 +1,964 @@
+
+/* ==========================================
+   PROYECTO: COLEGIO ARCOÍRIS
+   HOJA DE ESTILOS CSS3
+   ========================================== */
+
+/* 1. VARIABLES DE COLORES Y ESTILOS */
+:root {
+    --rosa: #F9DCE5;
+    --rosa-fuerte: #E99CB5;
+    --celeste: #DCEFFA;
+    --celeste-fuerte: #78B9D8;
+    --lavanda: #EAE2FA;
+    --lavanda-fuerte: #9B87CC;
+    --menta: #DDF3E6;
+    --menta-fuerte: #78B99A;
+    --amarillo: #FFF0C7;
+    --blanco: #FFFFFF;
+    --fondo: #FFFCFA;
+    --texto: #414052;
+    --texto-suave: #777487;
+    --borde: #E9E3E9;
+    --sombra: 0 8px 28px rgba(83, 70, 103, 0.09);
+}
+
+/* 2. CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Nunito", Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--lavanda-fuerte);
+    outline-offset: 3px;
+}
+
+.contenedor {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.seccion {
+    padding: 90px 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 12px 0 18px;
+}
+
+p {
+    color: var(--texto-suave);
+}
+
+.fondo-lavanda {
+    background: var(--lavanda);
+}
+
+.fondo-rosa {
+    background: #FFF0F4;
+}
+
+.fondo-menta {
+    background: #F0FAF4;
+}
+
+/* 3. ENCABEZADO Y NAVEGACIÓN */
+.encabezado {
+    background: rgba(255, 252, 250, 0.96);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.barra-superior {
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo-icono {
+    font-size: 2.5rem;
+}
+
+.logo strong,
+.logo small {
+    display: block;
+}
+
+.logo strong {
+    font-size: 1.1rem;
+    color: #5E507D;
+}
+
+.logo small {
+    font-size: 0.78rem;
+    color: var(--texto-suave);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navegacion a {
+    font-size: 0.91rem;
+    font-weight: 700;
+    transition: color 0.25s;
+}
+
+.navegacion a:hover {
+    color: var(--lavanda-fuerte);
+}
+
+/* 4. BOTONES */
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 13px 22px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s,
+                background 0.25s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.boton-principal {
+    background: var(--lavanda-fuerte);
+    color: var(--blanco);
+}
+
+.boton-principal:hover {
+    background: #8270B8;
+}
+
+.boton-secundario {
+    background: var(--blanco);
+    color: #75659F;
+    border-color: #D8CBEF;
+}
+
+.boton-menu {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* 5. PORTADA */
+.portada {
+    padding: 70px 0 85px;
+    background: linear-gradient(
+        125deg,
+        #FFF7F3 0%,
+        #F6F0FF 52%,
+        #EAF7FF 100%
+    );
+    overflow: hidden;
+}
+
+.portada-contenido {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 25px;
+    background: var(--amarillo);
+    color: #826A36;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.portada h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 23px 0;
+    letter-spacing: -1.5px;
+}
+
+.portada h1 span {
+    color: var(--lavanda-fuerte);
+}
+
+.portada-texto > p {
+    max-width: 540px;
+    font-size: 1.06rem;
+}
+
+.portada-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin: 28px 0;
+}
+
+.portada-datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.portada-datos div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.portada-datos strong {
+    font-size: 1.5rem;
+}
+
+.portada-imagen {
+    position: relative;
+}
+
+.portada-imagen > img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 45% 45% 25px 25px;
+    box-shadow: var(--sombra);
+}
+
+.mensaje-flotante {
+    position: absolute;
+    bottom: 25px;
+    left: -25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--blanco);
+    padding: 16px 20px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.mensaje-flotante > span {
+    font-size: 2rem;
+}
+
+.mensaje-flotante strong {
+    font-size: 0.95rem;
+}
+
+.mensaje-flotante p {
+    font-size: 0.8rem;
+}
+
+/* 6. FRANJA DE CARACTERÍSTICAS */
+.franja {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+.franja-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+
+.franja-contenido div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+/* 7. SECCIÓN NOSOTROS */
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.nosotros-imagen {
+    position: relative;
+}
+
+.nosotros-imagen > img {
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.sello {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    background: var(--amarillo);
+    border: 6px solid var(--blanco);
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+    transform: rotate(7deg);
+}
+
+.nosotros-texto > p {
+    margin-bottom: 28px;
+}
+
+.valor {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.valor-icono {
+    min-width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    font-size: 1.5rem;
+}
+
+.valor-icono.rosa {
+    background: var(--rosa);
+}
+
+.valor-icono.celeste {
+    background: var(--celeste);
+}
+
+.valor-icono.verde {
+    background: var(--menta);
+}
+
+.valor h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.valor p {
+    font-size: 0.93rem;
+}
+
+/* 8. TÍTULOS DE SECCIÓN */
+.encabezado-seccion {
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto 45px;
+}
+
+.encabezado-seccion h2 {
+    margin-top: 15px;
+}
+
+.encabezado-seccion p {
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+/* 9. TARJETAS DE NIVELES */
+.tarjetas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta {
+    padding: 32px;
+    background: var(--blanco);
+    border: 1px solid rgba(130, 110, 170, 0.10);
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+}
+
+.nivel-rosa {
+    border-top: 6px solid var(--rosa-fuerte);
+}
+
+.nivel-celeste {
+    border-top: 6px solid var(--celeste-fuerte);
+}
+
+.nivel-menta {
+    border-top: 6px solid var(--menta-fuerte);
+}
+
+.tarjeta-icono {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    background: var(--lavanda);
+    border-radius: 22px;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.nivel-rosa .tarjeta-icono {
+    background: var(--rosa);
+}
+
+.nivel-celeste .tarjeta-icono {
+    background: var(--celeste);
+}
+
+.nivel-menta .tarjeta-icono {
+    background: var(--menta);
+}
+
+.tarjeta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    margin-bottom: 22px;
+}
+
+.tarjeta a {
+    color: #7D6AB2;
+    font-weight: 800;
+}
+
+.tarjeta a:hover {
+    text-decoration: underline;
+}
+
+/* 10. SERVICIOS */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.servicio {
+    padding: 27px 22px;
+    text-align: center;
+    border: 1px solid var(--borde);
+    background: var(--blanco);
+    border-radius: 22px;
+    transition: transform 0.3s;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+.servicio > span {
+    display: block;
+    font-size: 2.7rem;
+    margin-bottom: 14px;
+}
+
+.servicio h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.servicio p {
+    font-size: 0.9rem;
+}
+
+/* 11. GALERÍA DE IMÁGENES */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 20px;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    height: 290px;
+    border-radius: 22px;
+    background: var(--lavanda);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.07);
+}
+
+.galeria-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 35px 18px 17px;
+    color: var(--blanco);
+    font-weight: 800;
+    background: linear-gradient(transparent, rgba(40, 30, 55, 0.75));
+}
+
+/* 12. FORMULARIO DE ADMISIÓN */
+.admision-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 65px;
+}
+
+.admision-texto {
+    padding-top: 30px;
+}
+
+.admision-texto h2 {
+    margin-top: 20px;
+}
+
+.admision-texto > p {
+    margin-bottom: 25px;
+}
+
+.lista-beneficios {
+    list-style: none;
+}
+
+.lista-beneficios li {
+    margin: 13px 0;
+    font-weight: 700;
+}
+
+.lista-beneficios li::first-letter {
+    color: var(--menta-fuerte);
+}
+
+.nota-formulario {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--rosa);
+    border-radius: 18px;
+    font-weight: 700;
+}
+
+.formulario {
+    padding: 35px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 28px;
+    box-shadow: var(--sombra);
+}
+
+.formulario h3 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 19px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--texto);
+    background: #FFFCFE;
+    border: 1px solid #DED8E5;
+    border-radius: 12px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--lavanda-fuerte);
+    box-shadow: 0 0 0 3px rgba(155, 135, 204, 0.15);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.aceptacion {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin: 20px 0;
+}
+
+.aceptacion input {
+    margin-top: 6px;
+    accent-color: var(--lavanda-fuerte);
+}
+
+.boton-ancho {
+    width: 100%;
+    border: none;
+}
+
+.aviso-formulario {
+    font-size: 0.78rem;
+    text-align: center;
+    margin-top: 13px;
+}
+
+/* 13. CONTACTO */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.contacto-card {
+    background: var(--blanco);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+}
+
+.contacto-card > span {
+    font-size: 2.2rem;
+}
+
+.contacto-card h3 {
+    margin: 12px 0;
+}
+
+.contacto-card p {
+    overflow-wrap: anywhere;
+}
+
+.mapa-referencia {
+    margin-top: 30px;
+    padding: 25px;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px dashed #A8CEB9;
+    border-radius: 22px;
+}
+
+.mapa-referencia span {
+    font-size: 2.5rem;
+}
+
+/* 14. PIE DE PÁGINA */
+.pie-pagina {
+    color: var(--blanco);
+    background: #514867;
+    padding-top: 55px;
+}
+
+.pie-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 40px;
+}
+
+.logo-pie strong {
+    color: var(--blanco);
+}
+
+.logo-pie small {
+    color: #E2DCEC;
+}
+
+.pie-marca > p {
+    color: #E2DCEC;
+    margin-top: 17px;
+    max-width: 330px;
+}
+
+.pie-grid h3 {
+    font-size: 1.05rem;
+    margin-bottom: 17px;
+}
+
+.pie-grid > div:not(:first-child) a {
+    display: block;
+    color: #E2DCEC;
+    margin: 9px 0;
+    font-size: 0.92rem;
+}
+
+.pie-grid a:hover {
+    color: var(--amarillo);
+}
+
+.pie-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.pie-final p {
+    color: #E2DCEC;
+    font-size: 0.85rem;
+}
+
+/* 15. ADAPTACIÓN A TABLETAS */
+@media (max-width: 1000px) {
+    .barra-superior {
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .navegacion {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+    }
+
+    .portada-contenido {
+        gap: 30px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros-grid,
+    .admision-grid {
+        gap: 35px;
+    }
+}
+
+/* 16. ADAPTACIÓN A CELULARES */
+@media (max-width: 650px) {
+    .contenedor {
+        width: 92%;
+    }
+
+    .seccion {
+        padding: 60px 0;
+    }
+
+    .barra-superior {
+        gap: 12px;
+    }
+
+    .logo-icono {
+        font-size: 2rem;
+    }
+
+    .logo strong {
+        font-size: 0.95rem;
+    }
+
+    .logo small {
+        font-size: 0.7rem;
+    }
+
+    .boton-menu {
+        padding: 9px 13px;
+        font-size: 0.8rem;
+    }
+
+    .navegacion {
+        gap: 8px 15px;
+    }
+
+    .navegacion a {
+        font-size: 0.82rem;
+    }
+
+    .portada {
+        padding: 50px 0 60px;
+    }
+
+    .portada-contenido,
+    .nosotros-grid,
+    .admision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portada h1 {
+        font-size: 2.55rem;
+    }
+
+    .portada-imagen > img {
+        height: 330px;
+        border-radius: 30px;
+    }
+
+    .mensaje-flotante {
+        left: 10px;
+        bottom: 12px;
+        padding: 12px;
+    }
+
+    .franja-contenido {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .franja-contenido div {
+        font-size: 0.8rem;
+    }
+
+    .nosotros-imagen > img {
+        height: 330px;
+    }
+
+    .sello {
+        right: -5px;
+        width: 105px;
+        height: 105px;
+        font-size: 0.8rem;
+    }
+
+    .tarjetas-grid,
+    .servicios-grid,
+    .galeria-grid,
+    .contacto-grid,
+    .pie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        padding: 25px;
+    }
+
+    .galeria-item {
+        height: 260px;
+    }
+
+    .admision-texto {
+        padding-top: 0;
+    }
+
+    .formulario {
+        padding: 23px 18px;
+    }
+
+    .pie-grid {
+        gap: 28px;
+    }
+
+    .pie-final {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* 17. RESPETO POR MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
